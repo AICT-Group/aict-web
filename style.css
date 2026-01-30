@@ -1,0 +1,241 @@
+/* style.css */
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #37352f;
+    --heading-color: #37352f;
+    --gray-text: #787774;
+    --link-gray: #9b9a97;
+    --hover-bg: #efefef;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+    --max-width: 900px;
+    --content-width: 720px;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- HEADER IMAGE & LOGO --- */
+.cover-image {
+    width: 100%;
+    height: 30vh;
+    max-height: 300px;
+    min-height: 150px;
+    background-color: #C4C4C4;
+    /* PFAD ANGEPASST FÜR IMG ORDNER */
+    background-image: url('img/header.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.main-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px 100px 24px;
+    position: relative;
+}
+
+.icon-container {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.subtitle {
+    color: var(--gray-text);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.lead-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #efefef;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 1em;
+    font-size: 16px;
+}
+
+/* --- NAV & COLUMNS --- */
+.meta-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+    font-size: 0.95rem;
+}
+
+.meta-left, .meta-right {
+    flex: 1;
+    min-width: 250px;
+}
+
+.meta-link {
+    display: block;
+    color: var(--gray-text);
+    text-decoration: none;
+    margin-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+}
+.meta-link:hover {
+    border-bottom-color: var(--gray-text);
+}
+
+.hashtags {
+    color: var(--gray-text);
+}
+
+/* --- 2-COLUMN LAYOUT (Vision) --- */
+.two-column-layout {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.column {
+    flex: 1;
+}
+
+img.content-image {
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: block;
+}
+
+.image-caption {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    margin-top: 8px;
+}
+
+/* --- LISTS --- */
+ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+li strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* SPEZIAL FORMAT FÜR WERTE-SEITE */
+.values-list li {
+    margin-bottom: 20px;
+}
+.values-list li strong {
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+/* --- DIAGRAM --- */
+.diagram-container {
+    text-align: center;
+    margin: 60px 0;
+}
+.diagram-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.diagram-full-width {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* --- FOOTER & CALLOUT --- */
+.callout-box {
+    background-color: #f1f1ef;
+    padding: 16px 16px 16px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.callout-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.callout-box a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(55, 53, 47, 0.4);
+}
+
+.site-footer {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    border-top: 1px solid #efefef;
+    padding-top: 30px;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+    h1 { font-size: 2rem; }
+    .lead-text { font-size: 1.2rem; }
+}
