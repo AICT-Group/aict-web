@@ -1,5 +1,3 @@
-/* style.css */
-
 :root {
     --bg-color: #ffffff;
     --text-color: #37352f;
@@ -22,6 +20,26 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* --- LINKS (GLOBAL FIX) --- */
+a {
+    color: var(--gray-text);      /* Standardmäßig grau */
+    text-decoration: none;        /* Keine Unterstreichung im Ruhezustand */
+    transition: color 0.1s ease, text-decoration 0.1s ease;
+}
+
+a:visited {
+    color: var(--gray-text);      /* Besuchte Links bleiben grau */
+}
+
+a:hover {
+    text-decoration: underline;   /* Unterstreichung bei Mouseover */
+    color: var(--text-color);     /* Optional: Etwas dunkler beim Drüberfahren */
+}
+
+a:active {
+    color: var(--text-color);
+}
+
 /* --- HEADER IMAGE & LOGO --- */
 .cover-image {
     width: 100%;
@@ -29,7 +47,6 @@ body {
     max-height: 300px;
     min-height: 150px;
     background-color: #C4C4C4;
-    /* PFAD ANGEPASST FÜR IMG ORDNER */
     background-image: url('img/header.png'); 
     background-size: cover;
     background-position: center;
@@ -66,6 +83,7 @@ h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0 0 10px 0;
+    color: var(--heading-color);
 }
 
 .subtitle {
@@ -90,6 +108,7 @@ h2 {
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid #efefef;
+    color: var(--heading-color);
 }
 
 h3 {
@@ -121,13 +140,8 @@ p {
 .meta-link {
     display: block;
     color: var(--gray-text);
-    text-decoration: none;
     margin-bottom: 6px;
-    border-bottom: 1px solid transparent;
     width: fit-content;
-}
-.meta-link:hover {
-    border-bottom-color: var(--gray-text);
 }
 
 .hashtags {
@@ -200,13 +214,13 @@ li strong {
     border-radius: 4px;
 }
 
-/* --- FOOTER & CALLOUT --- */
+/* --- FOOTER & CALLOUT (INKL. STERN FIX) --- */
 .callout-box {
     background-color: #f1f1ef;
     padding: 16px 16px 16px 12px;
     border-radius: 4px;
     display: flex;
-    align-items: center;
+    align-items: center; /* Zentriert Icon und Text vertikal */
     color: var(--text-color);
     margin-bottom: 40px;
     font-weight: 500;
@@ -214,13 +228,24 @@ li strong {
 
 .callout-icon {
     margin-right: 12px;
-    font-size: 1.2rem;
+    display: flex;       /* Wichtig, damit das SVG sauber sitzt */
+    align-items: center;
+}
+
+/* Größe für das Stern-Icon */
+.callout-icon img {
+    width: 22px;
+    height: 22px;
 }
 
 .callout-box a {
-    color: inherit;
-    text-decoration: none;
+    /* Speziell für den Callout Link */
     border-bottom: 1px solid rgba(55, 53, 47, 0.4);
+    text-decoration: none; 
+}
+.callout-box a:hover {
+    text-decoration: none;
+    background-color: rgba(55, 53, 47, 0.08);
 }
 
 .site-footer {
